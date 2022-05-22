@@ -1,0 +1,23 @@
+html, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif;
+  background: #aa9a96;
+  color: #f7df1e;
+  letter-spacing: 2px;
+  height: 100vh;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
