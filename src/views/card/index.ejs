@@ -1,0 +1,12 @@
+<%- include('../header.ejs') %>
+<ul class="cards">
+  <% cards.forEach(function(card) { %>
+  <li class="card">
+    <h2><a class="card-title"><%=card.headline%></a></h2>
+    <% card.questions.forEach(function(q) { %>
+      <p><%=q%></p> 
+    <% }) %>  
+  </li>
+  <% })%>
+</ul>
+<%- include('../footer.ejs') %>
