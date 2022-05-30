@@ -2,17 +2,24 @@ import { model, Schema, Document } from "mongoose";
 
 interface ICard extends Document {
   headline: string;
-  questions: string[];
+  questionSelectedID: number,
+  questions: IQuestion[];
+}
+
+interface IQuestion{
+  id: number;
+  content: string;
 }
 
 const CardSchema = new Schema({
   headline: {
     type: String,
-    unique: true,
+    unique: true
   },
   questions: {
-    type: [String],
-  }
+    type: Object
+  },
+  questionSelectedID: {type: Number}
 });
 
 const CardModel = model<ICard>("Country", CardSchema);
