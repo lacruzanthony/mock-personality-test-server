@@ -35,4 +35,18 @@ routes.post("/", async (req, res) => {
   }
 });
 
+routes.put("/", async (req, res) => {
+  try{
+
+    const card: ICard = req.body;
+    const cardUpdated = await CardModel.replaceOne({_id: card._id}, card);
+
+    return res.status(200).json(cardUpdated);
+
+  }catch(error){
+    console.error(error);
+    return res.status(500).json({ error: "Sorry, something went wrong on update"})
+  }
+})
+
 export default routes;
