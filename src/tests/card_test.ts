@@ -9,12 +9,12 @@ const should = chai.should();
 
 let card: ICard;
 
-before(async () => {
+beforeEach(async () => {
   card = new CardModel({headline: 'Headline 1', questionSelectedID: 0, questions: []});
   await card.save();
 });
 
-after(async () => {
+afterEach(async () => {
   await CardModel.deleteOne({headline: 'Headline 1'});
 })
 
