@@ -44,30 +44,8 @@ describe("/card POST", () => {
   it('Creates a new Card', (done: Mocha.Done) => {
     card.save()
         .then(() => {
-            //if the newUser is saved in db and it is not new
             assert(!card.isNew);
             done();
         });
-  });
-});
-
-const helperFunc = (assertion: any, done: Mocha.Done) => {
-  assertion
-      .then(() => CardModel.find({}))
-      .then((cards: ICard[]) => {
-          assert(cards.length === 1);
-          assert(cards[0].headline === 'Headline 2');
-          done();
-      });
-  }
-
-describe("/card PUT", () => {
-    it('Sets and saves a card using an instance', (done) => {
-      card.set('headline', 'Headline 2');
-      helperFunc(card.save(), done);
-  });
-
-  it('Update a card using instance', (done) => {
-      helperFunc(card.update({ name: 'Headline 2' }), done);
   });
 });
