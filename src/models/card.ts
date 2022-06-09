@@ -3,7 +3,7 @@ import { model, Schema, Document } from "mongoose";
 interface ICard extends Document {
   headline: string;
   questionSelectedID: number,
-  questions: IQuestion[];
+  questions?: IQuestion[];
 }
 
 interface IQuestion{
@@ -22,6 +22,6 @@ const CardSchema = new Schema({
   questionSelectedID: {type: Number}
 });
 
-const CardModel = model<ICard>("Country", CardSchema);
+const CardModel = model<ICard>("Card", CardSchema);
 
 export { CardModel, ICard };
