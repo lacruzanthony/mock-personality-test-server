@@ -20,3 +20,5 @@ app.use("/cards", cardRoutes);
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+export default app
