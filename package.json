@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.ts",
     "build": "yarn test && tsc",
     "start": "node dist/index.js",
-    "test": "mocha --watch -r ts-node/register './src/tests/**/*.ts' --recursive --exit --timeout 10000"
+    "test": "mocha -r ts-node/register './src/tests/**/*.ts' --recursive --exit --timeout 10000"
   },
   "dependencies": {
     "express": "^4.17.1",
